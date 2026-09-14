@@ -1,194 +1,273 @@
 const dilemmas = [
-  {
-    category: "PRIVACIDADE",
-    question:
-      "Um aplicativo pede acesso aos seus contatos para funcionar corretamente. Você permitiria?",
-    options: [
-      {
-        title: "Sim, permitiria",
-        description: "Quero usar o aplicativo sem limitações.",
-        feedback:
-          "Antes de permitir, vale perguntar: o aplicativo realmente precisa desses dados para funcionar?"
-      },
-      {
-        title: "Não, recusaria",
-        description: "Minha privacidade é mais importante.",
-        feedback:
-          "Uma boa prática é conceder apenas as permissões realmente necessárias."
-      }
-    ]
-  },
+    {
+        category: "PRIVACIDADE",
+        question:
+            "Um aplicativo pede acesso aos seus contatos para funcionar corretamente. Você permitiria?",
+        answers: [
+            {
+                title: "Sim, permitiria",
+                description: "Quero usar o aplicativo sem limitações.",
+                reflection:
+                    "Antes de permitir, vale perguntar: o aplicativo realmente precisa desses dados para funcionar?"
+            },
+            {
+                title: "Não, recusaria",
+                description: "Minha privacidade vem primeiro.",
+                reflection:
+                    "Conceder apenas as permissões necessárias é uma forma simples de proteger seus dados."
+            }
+        ]
+    },
 
-  {
-    category: "REDES SOCIAIS",
-    question:
-      "Você recebe uma notícia muito chocante em um grupo. A informação parece verdadeira, mas não há fonte. O que faria?",
-    options: [
-      {
-        title: "Compartilharia",
-        description: "Outras pessoas precisam saber disso.",
-        feedback:
-          "Informações falsas podem se espalhar rapidamente. Compartilhar sem verificar aumenta o alcance do problema."
-      },
-      {
-        title: "Verificaria primeiro",
-        description: "Procuro uma fonte confiável antes.",
-        feedback:
-          "Verificar a origem, a data e outras fontes é uma ótima forma de reduzir a desinformação."
-      }
-    ]
-  },
+    {
+        category: "REDES SOCIAIS",
+        question:
+            "Você recebe uma notícia chocante em um grupo, mas não encontra nenhuma fonte confiável. O que faria?",
+        answers: [
+            {
+                title: "Compartilharia",
+                description: "Outras pessoas precisam saber disso.",
+                reflection:
+                    "Uma informação falsa pode se espalhar muito rapidamente quando compartilhada sem verificação."
+            },
+            {
+                title: "Verificaria primeiro",
+                description: "Procuraria uma fonte confiável.",
+                reflection:
+                    "Verificar a fonte, a data e outras publicações é uma boa prática contra a desinformação."
+            }
+        ]
+    },
 
-  {
-    category: "INTELIGÊNCIA ARTIFICIAL",
-    question:
-      "Uma IA produz um trabalho escolar praticamente pronto. Você entregaria o texto como se tivesse feito sozinho?",
-    options: [
-      {
-        title: "Sim, entregaria",
-        description: "A IA fez o trabalho rapidamente.",
-        feedback:
-          "Usar tecnologia não elimina a responsabilidade sobre aquilo que você entrega."
-      },
-      {
-        title: "Usaria como apoio",
-        description: "Eu revisaria e produziria minha própria versão.",
-        feedback:
-          "Usar IA como ferramenta de apoio pode ser mais responsável quando você entende, verifica e participa do resultado."
-      }
-    ]
-  },
+    {
+        category: "INTELIGÊNCIA ARTIFICIAL",
+        question:
+            "Uma ferramenta de IA produz praticamente todo o seu trabalho escolar. Você entregaria o resultado sem alterar nada?",
+        answers: [
+            {
+                title: "Entregaria",
+                description: "A ferramenta já fez praticamente tudo.",
+                reflection:
+                    "Usar uma ferramenta não elimina a responsabilidade sobre aquilo que você entrega."
+            },
+            {
+                title: "Usaria como apoio",
+                description: "Revisaria e produziria minha própria versão.",
+                reflection:
+                    "Quando usada como apoio, a IA pode ajudar sem substituir seu entendimento e sua participação."
+            }
+        ]
+    },
 
-  {
-    category: "PEGADA DIGITAL",
-    question:
-      "Você encontra uma foto antiga de um amigo que pode causar constrangimento. O que faria?",
-    options: [
-      {
-        title: "Publicaria",
-        description: "É apenas uma brincadeira.",
-        feedback:
-          "Uma publicação pode permanecer na internet mesmo depois de apagada e atingir outras pessoas."
-      },
-      {
-        title: "Não publicaria",
-        description: "Prefiro respeitar a privacidade dele.",
-        feedback:
-          "Respeitar a imagem e a privacidade de outras pessoas também faz parte da cidadania digital."
-      }
-    ]
-  },
+    {
+        category: "PRIVACIDADE",
+        question:
+            "Você encontra uma foto antiga de um amigo que pode deixá-lo constrangido. O que faria?",
+        answers: [
+            {
+                title: "Publicaria",
+                description: "Seria apenas uma brincadeira.",
+                reflection:
+                    "Uma brincadeira para uma pessoa pode ser constrangedora para outra, especialmente quando fica registrada online."
+            },
+            {
+                title: "Não publicaria",
+                description: "Prefiro respeitar a privacidade.",
+                reflection:
+                    "Pensar no impacto sobre outras pessoas também faz parte de uma postura responsável no ambiente digital."
+            }
+        ]
+    },
 
-  {
-    category: "SEGURANÇA",
-    question:
-      "Você recebe um link dizendo que ganhou um prêmio. Para receber o prêmio, precisa informar sua senha. O que faria?",
-    options: [
-      {
-        title: "Informaria",
-        description: "Não quero perder a oportunidade.",
-        feedback:
-          "Senhas são informações pessoais e nunca devem ser fornecidas para receber supostos prêmios."
-      },
-      {
-        title: "Ignoraria",
-        description: "Prefiro confirmar se a mensagem é legítima.",
-        feedback:
-          "Desconfiar de mensagens inesperadas e verificar o remetente ajuda a evitar golpes e phishing."
-      }
-    ]
-  }
+    {
+        category: "SEGURANÇA DIGITAL",
+        question:
+            "Você recebe uma mensagem dizendo que ganhou um prêmio. Para recebê-lo, precisa informar sua senha. O que faria?",
+        answers: [
+            {
+                title: "Informaria",
+                description: "Não quero perder a oportunidade.",
+                reflection:
+                    "Senhas são informações pessoais e não devem ser fornecidas para receber supostos prêmios."
+            },
+            {
+                title: "Ignoraria",
+                description: "Primeiro verificaria a mensagem.",
+                reflection:
+                    "Desconfiar de mensagens inesperadas e confirmar sua origem ajuda a evitar golpes."
+            }
+        ]
+    }
 ];
+
 
 let currentDilemma = 0;
 let answered = false;
 
-const category = document.getElementById("category");
-const question = document.getElementById("question");
-const questionNumber = document.getElementById("questionNumber");
 
-const currentNumber = document.getElementById("currentNumber");
-const totalNumber = document.getElementById("totalNumber");
+/* ELEMENTOS */
 
-const choices = document.querySelectorAll(".choice");
+const categoryElement = document.getElementById("category");
+const questionElement = document.getElementById("question");
 
-const feedback = document.getElementById("feedback");
-const feedbackTitle = document.getElementById("feedbackTitle");
-const feedbackText = document.getElementById("feedbackText");
+const currentElement = document.getElementById("current");
+const totalElement = document.getElementById("total");
 
-const nextButton = document.getElementById("nextButton");
+const dilemmaNumberElement =
+    document.getElementById("dilemaNumber");
 
-totalNumber.textContent = String(dilemmas.length).padStart(2, "0");
+const answerButtons =
+    document.querySelectorAll(".answer");
+
+const resultElement =
+    document.getElementById("result");
+
+const resultTitle =
+    document.getElementById("resultTitle");
+
+const resultText =
+    document.getElementById("resultText");
+
+const nextButton =
+    document.getElementById("next");
+
+
+/* TOTAL */
+
+totalElement.textContent =
+    String(dilemmas.length).padStart(2, "0");
+
+
+/* CARREGAR DILEMA */
 
 function loadDilemma() {
-  const dilemma = dilemmas[currentDilemma];
 
-  category.textContent = dilemma.category;
+    const dilemma = dilemmas[currentDilemma];
 
-  question.textContent = dilemma.question;
+    const number =
+        String(currentDilemma + 1).padStart(2, "0");
 
-  const number = String(currentDilemma + 1).padStart(2, "0");
+    categoryElement.textContent =
+        dilemma.category;
 
-  questionNumber.textContent = number;
-  currentNumber.textContent = number;
+    currentElement.textContent =
+        number;
 
-  choices.forEach((choice, index) => {
-    choice.classList.remove("selected");
+    dilemmaNumberElement.textContent =
+        `DILEMA ${number}`;
 
-    choice.querySelector(".choice-content strong").textContent =
-      dilemma.options[index].title;
+    questionElement.textContent =
+        dilemma.question;
 
-    choice.querySelector(".choice-content small").textContent =
-      dilemma.options[index].description;
-  });
 
-  feedback.classList.remove("show");
-  nextButton.classList.remove("show");
+    answerButtons.forEach((button, index) => {
 
-  answered = false;
+        const answer = dilemma.answers[index];
+
+        const title =
+            button.querySelector(".answer-text strong");
+
+        const description =
+            button.querySelector(".answer-text small");
+
+        title.textContent = answer.title;
+
+        description.textContent = answer.description;
+
+        button.classList.remove("selected");
+    });
+
+
+    resultElement.classList.remove("visible");
+
+    nextButton.classList.remove("visible");
+
+    answered = false;
 }
 
-function selectChoice(index) {
-  if (answered) return;
 
-  answered = true;
+/* ESCOLHER RESPOSTA */
 
-  const dilemma = dilemmas[currentDilemma];
+answerButtons.forEach((button) => {
 
-  choices.forEach((choice, choiceIndex) => {
-    choice.classList.toggle("selected", choiceIndex === index);
-  });
+    button.addEventListener("click", () => {
 
-  feedbackTitle.textContent = "Uma possibilidade de reflexão";
+        if (answered) {
+            return;
+        }
 
-  feedbackText.textContent =
-    dilemma.options[index].feedback;
+        answered = true;
 
-  feedback.classList.add("show");
+        const answerIndex =
+            Number(button.dataset.answer);
 
-  if (currentDilemma < dilemmas.length - 1) {
-    nextButton.textContent = "Próximo dilema →";
-  } else {
-    nextButton.textContent = "Recomeçar →";
-  }
+        const dilemma =
+            dilemmas[currentDilemma];
 
-  nextButton.classList.add("show");
-}
+        const selectedAnswer =
+            dilemma.answers[answerIndex];
 
-choices.forEach((choice, index) => {
-  choice.addEventListener("click", () => {
-    selectChoice(index);
-  });
+
+        answerButtons.forEach((item) => {
+            item.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+
+        resultTitle.textContent =
+            "Para refletir";
+
+        resultText.textContent =
+            selectedAnswer.reflection;
+
+        resultElement.classList.add("visible");
+
+
+        nextButton.classList.add("visible");
+
+
+        if (
+            currentDilemma ===
+            dilemmas.length - 1
+        ) {
+            nextButton.innerHTML =
+                'Recomeçar <span>→</span>';
+        } else {
+            nextButton.innerHTML =
+                'Próximo dilema <span>→</span>';
+        }
+
+    });
+
 });
+
+
+/* PRÓXIMO */
 
 nextButton.addEventListener("click", () => {
-  if (currentDilemma < dilemmas.length - 1) {
-    currentDilemma++;
-  } else {
-    currentDilemma = 0;
-  }
 
-  loadDilemma();
+    if (
+        currentDilemma <
+        dilemmas.length - 1
+    ) {
+        currentDilemma++;
+    } else {
+        currentDilemma = 0;
+    }
+
+    loadDilemma();
+
+    document
+        .querySelector("#dilemas")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
 });
+
+
+/* INICIAR */
 
 loadDilemma();
